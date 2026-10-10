@@ -1,0 +1,14 @@
+.next
+node_modules
+.data
+playwright-report
+test-results
+package-lock.json
+supabase/seed.sql
+src/server/db/sqlBundle.generated.ts
+public/pglite
+playwright-report-static
+out
+play
+index.html
+_config.yml

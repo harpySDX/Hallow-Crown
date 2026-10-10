@@ -1,0 +1,63 @@
+{
+  "name": "hollow-crown",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hollow Crown \u2014 a browser-based open-world action RPG built with Next.js, Phaser and Supabase.",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "prebuild": "node scripts/copy-pglite.mjs",
+    "build": "next build",
+    "build:static": "node scripts/static.mjs build",
+    "build:pages": "node scripts/build-pages.mjs",
+    "dev:static": "node scripts/static.mjs dev",
+    "preview:static": "node scripts/static.mjs preview",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run --project unit",
+    "test:watch": "vitest --project unit",
+    "test:integration": "vitest run --project integration",
+    "test:e2e": "playwright test",
+    "test:e2e:static": "playwright test -c playwright.static.config.ts",
+    "content:validate": "tsx scripts/validate-content.ts",
+    "db:seed": "tsx scripts/seed.ts",
+    "check": "npm run lint && npm run typecheck && npm run content:validate && tsx scripts/bundle-sql.ts --check && npm test",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:seed:apply": "tsx scripts/seed.ts --apply",
+    "test:all": "npm run test && npm run test:integration",
+    "db:bundle": "tsx scripts/bundle-sql.ts"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.117.3",
+    "next": "^16.4.0",
+    "pg": "^8.23.1",
+    "phaser": "^3.90.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "server-only": "^0.0.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^22.20.5",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.0",
+    "postcss": "^8.5.29",
+    "prettier": "^3.9.9",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.3"
+  }
+}

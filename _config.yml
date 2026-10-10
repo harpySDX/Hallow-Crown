@@ -1,0 +1,23 @@
+# Only used when GitHub Pages is set to "Deploy from a branch". The .nojekyll file normally turns
+# Jekyll off entirely; this file is a fallback in case .nojekyll was lost (e.g. hidden files skipped
+# during a web upload). It keeps Next.js's "_next" asset folder and skips the source code.
+include:
+  - _next
+  - .nojekyll
+exclude:
+  - README.md
+  - docs
+  - src
+  - tests
+  - e2e
+  - scripts
+  - supabase
+  - public
+  - node_modules
+  - out
+  - package.json
+  - package-lock.json
+  - "*.ts"
+  - "*.mts"
+  - "*.mjs"
+  - "*.json"
